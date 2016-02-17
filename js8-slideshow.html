@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html ng-app="slideShowMaker">
+<head>
+	<title> JS8: Slideshow</title>
+
+	<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/3.0.3/normalize.css">
+	<link rel="stylesheet" type="text/css" href="js8-slideshow.css">
+
+</head>
+<body ng-controller="photoGallery">
+	<div class="wrapper">
+
+		<div class="headingDiv">
+			<h1>This SlideShow is made via Angular</h1>
+		</div>
+			<div class="slideshowDiv">
+					<div class="arrowLeft" ng-click="prevSlide()"><</div>
+					<div class="arrowRight" ng-click="nextSlide()">></div>
+					<div class="pictures" ng-repeat="pictureItem in carouselImg" ng-show="$index === activeImg">
+						<img class="carousel" ng-src="{{pictureItem.photoUrl}}">
+						<p class="pictureDescription"><strong>Description:</strong>{{pictureItem.caption}}</p>
+					</div>
+
+	<!-- 			<a id="prev-button" href="#" class="slide-button"><</a>
+	 -->	</div>
+	</div>
+</body>
+		<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.4.8/angular.js"></script>
+		<script type="text/javascript" src="js8-slideshow.js"></script>
+</html>
